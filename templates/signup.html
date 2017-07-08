@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Signup</title>
-        <style type ="text/css">
-            .error {
-                color: red;
-            }
-        </style>
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1>Signup</h1>
+{% block content %}
+    <h1>{{title}}</h1>
 
-        {% block content %}
-        {% endblock %}
-        
-    </body>
-</html>
+    <form action="/enter" method="POST">
+    Username: <input type="text" name="username"></input><span class="error"></span><br>
+    Password: </label><input type="password" name="password"></input><span class="error"></span><br>
+    Verify Password: </label><input type="password" name="verify"></input><span class="error"></span><br>
+    Email (Optional): </label><input type="text" name="email"></input><span class="error"></span><br>
+
+    <input type="submit" value="Submit Query"/>
+    </form>
+{% endblock %}
